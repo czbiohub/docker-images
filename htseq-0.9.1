@@ -1,0 +1,22 @@
+# Base image
+FROM continuumio/miniconda3
+
+# Updating repository sources
+RUN apt-get update
+
+# some configuration to make it easy to install things
+RUN conda config --set always_yes yes --set changeps1 no
+RUN conda update -q conda
+
+# add channels to look for packages
+RUN conda config --add channels r # for backward compatibility with old r packages
+RUN conda config --add channels defaults
+RUN conda config --add channels conda-forge # additional common tools
+RUN conda config --add channels bioconda # useful bioinformatics
+
+RUN conda install -n root _license
+
+# display info
+RUN conda info -a
+
+RUN conda install htseq=0.9.1
