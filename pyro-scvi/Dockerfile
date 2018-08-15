@@ -3,7 +3,7 @@ FROM ${base_img}
 
 # Optional args
 ARG cuda=0
-ARG python_version=2.7
+ARG python_version=3.6
 ARG pyro_branch=release
 ARG pytorch_branch=release
 ARG uid=1000
@@ -44,12 +44,6 @@ COPY install.sh ${WORK_DIR}/install.sh
 
 # Install python 2/3, PyTorch and Pyro
 RUN cd ${WORK_DIR} && conda update -n base conda -c defaults && bash install.sh
-
-# install scVI, scanpy, umap
-RUN conda install seaborn scikit-learn statsmodels numba
-RUN conda install scvi -c bioconda
-RUN conda install umap-learn -c conda-forge
-RUN pip install scanpy
 
 # Run Jupyter notebook
 # (Ref: http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#docker-cmd)
