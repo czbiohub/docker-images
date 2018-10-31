@@ -9,7 +9,7 @@ conda install -y matplotlib scikit-learn numba
 conda install -y scvi -c bioconda
 conda install -y umap-learn -c conda-forge
 
-git clone https://github.czbiohub/simscity.git
+git clone https://github.com/czbiohub/simscity.git
 cd simscity && python setup.py install && cd -
 
 # 1. Install PyTorch
