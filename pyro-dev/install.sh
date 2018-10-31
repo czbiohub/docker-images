@@ -3,15 +3,6 @@ set -xe
 
 pip install --upgrade pip
 
-# install jupyterlab, scVI, umap, scanpy
-conda install -y jupyterlab
-conda install -y matplotlib scikit-learn numba
-conda install -y scvi -c bioconda
-conda install -y umap-learn -c conda-forge
-
-git clone https://github.com/czbiohub/simscity.git
-cd simscity && python setup.py install && cd -
-
 # 1. Install PyTorch
 # Use conda package if pytorch_branch = 'release'.
 # Else, install from source, using git branch `pytorch_branch`
@@ -39,3 +30,12 @@ else
     git clone https://github.com/uber/pyro.git
     (cd pyro && git checkout ${pyro_branch} && pip install .[dev])
 fi
+
+
+# install jupyterlab, scVI, umap, scanpy
+conda install -y jupyterlab
+conda install -y matplotlib scikit-learn numba
+conda install -y umap-learn -c conda-forge
+
+git clone https://github.com/czbiohub/simscity.git
+cd simscity && python setup.py install && cd -
