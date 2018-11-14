@@ -1,5 +1,4 @@
-ARG base_img=ubuntu:16.04
-FROM ${base_img}
+FROM ppc64le/hello-world
 
 # Optional args
 ARG cuda=0
@@ -17,7 +16,7 @@ ENV WORK_DIR /home/${USER_NAME}/workspace
 ENV PATH ${CONDA_DIR}/bin:${PATH}
 
 # Install linux utils
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN yum update && yum install -y --no-install-recommends \
          build-essential \
          cmake \
          git \
@@ -33,7 +32,7 @@ USER ${USER_NAME}
 
 # Install conda
 RUN curl -o ~/miniconda.sh -O \
-    https://repo.continuum.io/miniconda/Miniconda${python_version%%.*}-latest-Linux-x86_64.sh && \
+    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-ppc64le.sh && \
     bash ~/miniconda.sh -f -b -p ${CONDA_DIR} && \
     rm ~/miniconda.sh
 ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
