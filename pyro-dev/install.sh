@@ -34,8 +34,7 @@ fi
 
 # install jupyterlab, scVI, umap, scanpy
 conda install -y jupyterlab
-conda install -y matplotlib scikit-learn numba
-conda install -y umap-learn -c conda-forge
+conda install -y umap-learn altair -c conda-forge
 
 git clone https://github.com/czbiohub/simscity.git
 cd simscity && python setup.py install && cd -
