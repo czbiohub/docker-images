@@ -20,6 +20,8 @@ else
     popd
 fi
 
+source /opt/DL/pytorch/bin/pytorch-activate
+
 # 2. Install Pyro
 # Use pypi wheel if pyro_branch = 'release'.
 # Else, install from source, using git branch `pyro_branch`
