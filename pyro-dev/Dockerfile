@@ -33,7 +33,7 @@ COPY install.sh ${WORK_DIR}/install.sh
 # Install python 2/3, PyTorch and Pyro
 RUN echo 1 | sudo /opt/DL/license/bin/accept-powerai-license.sh
 RUN cd ${WORK_DIR} && conda update -n base conda -c defaults && bash install.sh
-RUN chown ${USER_NAME} ${WORK_DIR}
+RUN sudo chown ${USER_NAME} ${WORK_DIR}
 
 # Run Jupyter notebook
 # (Ref: http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#docker-cmd)
