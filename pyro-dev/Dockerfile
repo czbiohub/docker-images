@@ -35,8 +35,9 @@ RUN echo 1 | sudo /opt/DL/license/bin/accept-powerai-license.sh
 RUN sudo chown ${USER_NAME} ${WORK_DIR}
 RUN sudo chgrp ${USER_NAME} ${WORK_DIR}
 RUN cd ${WORK_DIR} && conda update -n base conda -c defaults && bash install.sh
+RUN bash /opt/DL/pytorch/bin/pytorch-activate
 
 # Run Jupyter notebook
 # (Ref: http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#docker-cmd)
 EXPOSE 8888
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser"]
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0"]
