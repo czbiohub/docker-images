@@ -1,4 +1,4 @@
-FROM ibmcom/powerai:1.5.2-all-ubuntu16.04-py3
+FROM ibmcom/powerai:1.5.3-all-ubuntu16.04-py3
 
 # Optional args
 ARG cuda=0
@@ -35,7 +35,6 @@ RUN echo 1 | sudo /opt/DL/license/bin/accept-powerai-license.sh
 RUN sudo chown ${USER_NAME} ${WORK_DIR}
 RUN sudo chgrp ${USER_NAME} ${WORK_DIR}
 RUN cd ${WORK_DIR} && conda update -n base conda -c defaults && bash install.sh
-RUN bash /opt/DL/pytorch/bin/pytorch-activate
 
 # Run Jupyter notebook
 # (Ref: http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#docker-cmd)
