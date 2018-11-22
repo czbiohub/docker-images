@@ -1,4 +1,4 @@
-FROM ibmcom/powerai:1.5.3-all-ubuntu16.04-py3
+FROM ibmcom/powerai:1.5.4-all-ubuntu18.04-py3
 
 # Optional args
 ARG cuda=0
