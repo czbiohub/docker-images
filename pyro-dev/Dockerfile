@@ -1,5 +1,4 @@
-ARG base_img=ubuntu:16.04
-FROM ${base_img}
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 # Optional args
 ARG cuda=0
