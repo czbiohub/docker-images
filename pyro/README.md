@@ -1,6 +1,9 @@
-This folder is a fork from https://github.com/uber/pyro/tree/master/docker . The only
-changes are in `install.sh` where we add some more packages of interest, and in `Dockerfile`
-the default python version is set to 3.6.
+This folder is a fork from https://github.com/uber/pyro/tree/master/docker. I removed some options
+that I don't anticipate needing, to make things simpler.
+
+ * Python is set to 3.7
+ * PyTorch is set to the latest release on conda (1.0 as of writing)
+ * Only the GPU image is supported
 
 ## Using Pyro Docker
 

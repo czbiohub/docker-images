@@ -1,25 +1,17 @@
 .PHONY: help build-gpu
 
 DOCKER_FILE=Dockerfile
-DOCKER_GPU_CMD=nvidia-docker
+DOCKER_CMD=nvidia-docker
 HOST_WORK_DIR=${HOME}/pyro_docker
 UID=$(shell id -u)
 GID=$(shell id -g)
 DOCKER_WORK_DIR=/home/${USER}/workspace/shared
 
 # Optional args
-python_version?=3.6
-pytorch_branch?=release
-cmd?=bash
+python_version?=3.7
+pyro_branch?=release
 
-img_prefix=pyro-gpu
-
-ifeq ($(img), )
-	IMG_NAME=${img_prefix}-${pyro_branch}-${python_version}
-else
-	IMG_NAME=${img}
-endif
-
+IMG_NAME=pyro-gpu-${pyro_branch}-${python_version}
 
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/##//'
@@ -35,7 +27,7 @@ build-gpu: ##
 	##   python_version: version of python to use. default - python 3.6
 	##   pyro_branch: whether to use the released Pyro wheel or a git branch.
 	##
-	${DOCKER_GPU_CMD} build -t ${IMG_NAME} \
+	${DOCKER_CMD} build -t ${IMG_NAME} \
 	--build-arg uid=${UID} \
 	--build-arg gid=${GID} \
 	--build-arg cuda=1 \
