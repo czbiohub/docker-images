@@ -1,11 +1,9 @@
-ARG base_img=ubuntu:16.04
-FROM ${base_img}
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 # Optional args
-ARG cuda=0
-ARG python_version=3.6
+ARG cuda=1
+ARG python_version=3.7
 ARG pyro_branch=release
-ARG pytorch_branch=release
 ARG uid=1000
 ARG gid=1000
 ARG ostype=Linux
