@@ -1,8 +1,9 @@
-This folder is a fork from https://github.com/uber/pyro/tree/master/docker. I removed some options that I don't anticipate needing, to make things simpler.
+This folder is a fork from https://github.com/uber/pyro/tree/master/docker. I removed some options that I don't anticipate needing, to make things simpler, and I added some packages I want.
 
- * Python is set to 3.7
+ * Python is set to 3.7 by default
  * PyTorch is set to the latest release on conda (1.0 as of writing)
  * Only the GPU image is supported
+ * Some useful packages are included
 
 ## Using Pyro Docker
 

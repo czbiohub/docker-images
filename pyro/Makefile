@@ -24,7 +24,7 @@ build-gpu: ##
 	## Build a docker image for running Pyro on a GPU.
 	## Requires nvidia-docker (https://github.com/NVIDIA/nvidia-docker).
 	## Args:
-	##   python_version: version of python to use. default - python 3.6
+	##   python_version: version of python to use. default - python 3.7
 	##   pyro_branch: whether to use the released Pyro wheel or a git branch.
 	##
 	${DOCKER_CMD} build -t ${IMG_NAME} \
