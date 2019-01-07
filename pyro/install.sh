@@ -17,3 +17,7 @@ pip install umap-learn
 git clone https://github.com/czbiohub/simscity.git
 (cd simscity && python setup.py install)
 cd ${HOME}
+
+git clone https://github.com/czbiohub/drvish.github
+(cd drvish && python setup.py install)
+cd ${HOME}

@@ -9,7 +9,7 @@ DOCKER_WORK_DIR=/home/${USER}/workspace/shared
 
 # Optional args
 python_version?=3.6
-pyro_branch?=pytorch-1.0
+pyro_branch?=master
 cmd?=bash
 
 img_prefix=pyro-gpu
