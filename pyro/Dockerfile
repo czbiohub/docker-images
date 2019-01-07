@@ -39,4 +39,5 @@ RUN cd ${WORK_DIR} && conda update -n base conda -c defaults && bash install.sh
 # Run Jupyter notebook
 # (Ref: http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#docker-cmd)
 EXPOSE 8888
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0"]
+COPY run.sh ${WORK_DIR}/run.sh
+CMD ["bash", "run.sh"]
